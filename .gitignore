@@ -4,3 +4,5 @@
 # User-specific stuff
 .idea/
 node_modules/
+dist/
+.cache/

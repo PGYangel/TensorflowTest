@@ -1,0 +1,23 @@
+{
+  "name": "tensorflowtest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ts.min.js",
+  "dependencies": {
+    "@tensorflow/tfjs": "^1.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PGYangel/TensorflowTest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PGYangel/TensorflowTest/issues"
+  },
+  "homepage": "https://github.com/PGYangel/TensorflowTest#readme"
+}
