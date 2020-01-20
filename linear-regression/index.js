@@ -1,7 +1,7 @@
 import * as tf from '@tensorflow/tfjs'
 import * as tfvis from '@tensorflow/tfjs-vis'
 
-window.onload = () => {
+window.onload = async () => {
     const xs = [1, 2, 3, 4];
     const ys = [1, 3, 5, 7];
 
@@ -23,4 +23,14 @@ window.onload = () => {
         optimizer: tf.train.sgd(0.1)        //优化器：随机梯度下降法，0.1是学习速率，真实运用是试出来最优速率
     })
 
+    const inputs=tf.tensor(xs)
+    const labels=tf.tensor(ys)
+    await model.fit(inputs,labels,{
+        batchSize:4,
+        epochs:100,
+        callbacks:tfvis.show.fitCallbacks(
+            {name:'训练过程'},
+            ['loss']
+        )
+    })
 };

@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/PGYangel/TensorflowTest/issues"
   },
-  "homepage": "https://github.com/PGYangel/TensorflowTest#readme"
+  "homepage": "https://github.com/PGYangel/TensorflowTest#readme",
+  "browserslist": [
+    "last 1 Chrome version"
+  ]
 }
