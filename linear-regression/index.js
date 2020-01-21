@@ -15,7 +15,7 @@ window.onload = async () => {
 
     const model = tf.sequential();
     model.add(tf.layers.dense({
-        units: 1,
+        units: 1,//神经元个数
         inputShape: [1]
     }));
     model.compile({
