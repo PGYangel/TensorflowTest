@@ -21,6 +21,9 @@ window.onload = async () => {
         units: 1,
         inputShape: [2],
         activation: 'sigmoid' //激活函数sigmoid
-    }))
+    }));
+    model.compile({
+        loss:tf.losses.logLoss
+    });
 
 };
