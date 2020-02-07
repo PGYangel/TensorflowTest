@@ -23,7 +23,23 @@ window.onload = async () => {
         activation: 'sigmoid' //激活函数sigmoid
     }));
     model.compile({
-        loss:tf.losses.logLoss
+        loss: tf.losses.logLoss,
+        optimizer: tf.train.adam(0.1)
     });
 
+    const inputs = tf.tensor(data.map(p => [p.x, p.y]))
+    const labels = tf.tensor(data.map(p => p.label))
+
+    await model.fit(inputs, labels, {
+        batchSize: 40,
+        epochs: 50,
+        callbacks: tfvis.show.fitCallbacks(
+            {name: '训练过程'},
+            ['loss']
+        )
+    })
+    window.predict = (form) => {
+        const pred = model.predict(tf.tensor([[form.x.value * 1, form.y.value * 1]]))
+        alert(`预测结果：${pred.dataSync()[0]}`)
+    }
 };
