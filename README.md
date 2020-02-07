@@ -1,5 +1,7 @@
 # Tensorflow机器学习练习
 
+## 所有实例使用parcel启动页面
+
 ## setup 安装tf
 
 ## linear-regression 线性回归
