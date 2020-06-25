@@ -27,7 +27,7 @@ window.onload = async () => {
     const labels = tf.tensor(ys)
     await model.fit(inputs, labels, {
         batchSize: 4,//每次扔4个点数据
-        epochs: 30,//训练30次
+        epochs: 200,//训练30次
         callbacks: tfvis.show.fitCallbacks(
             {name: '训练过程'},
             ['loss']

@@ -14,7 +14,6 @@ window.onload = async () => {
             ]
         }
     );
-
     const model = tf.sequential();
     model.add(tf.layers.dense({
         units: 4,
@@ -29,10 +28,8 @@ window.onload = async () => {
         loss: tf.losses.logLoss,
         optimizer: tf.train.adam(0.1)
     });
-
     const inputs = tf.tensor(data.map(p => [p.x, p.y]));
     const labels = tf.tensor(data.map(p => p.label));
-
     await model.fit(inputs, labels, {
         epochs: 10,
         callbacks: tfvis.show.fitCallbacks(
@@ -40,7 +37,6 @@ window.onload = async () => {
             ['loss']
         )
     });
-
     window.predict = (form) => {
         const pred = model.predict(tf.tensor([[form.x.value * 1, form.y.value * 1]]));
         alert(`预测结果：${pred.dataSync()[0]}`);
